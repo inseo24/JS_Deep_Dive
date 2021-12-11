@@ -1,0 +1,95 @@
+제어문은 조건문 이나 반복문에 사용된다.
+제어문은 코드 블럭안에서 사용하는데 문의 끝에는 ;(세미콜론)을 무조건 붙여야 한다. 
+하지만 블록은 언제나 문의 종료를 의미하는 자체 종결성을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.
+
+const num = 1;
+if(num < 10){
+ 	num++;
+}
+
+자바스크립트는 if...else문과 switch문으로 두가지 조건문을 제공한다.
+if...else는 불리언값으로 조건식이 실행된다.
+
+const num = 1
+
+if(num < 10){
+	console.log("Hello");
+    }else{
+    console.log("Bye");
+    }
+    
+true면 hello가 출력되고 false면 Bye가 출력된다.
+
+if문은 불리언값으로 평가되는데 불리언값이 아니라면 자바스크립트에서 암묵적으로 불리언값으로 강제변환하여 실행한다.
+
+if와 else는 한 번인상 사용하지 못하므로 조건식을 더 추가하고 싶으면 if와 else사이에 else if를 추가하면 된다.
+
+const num = 1
+
+if(num < 10){
+	console.log("Hello");
+}else if(num == 10){
+    console.log("Hi");
+}else{
+	console.log("Bye");
+}
+else if 와 else는 옵션이라 if만 단독으로 사용할 수 있다.
+
+const num =1;
+
+if(num < 10){
+	console.log("Hello");
+    }
+실행문이 하나라면 {}(중괄호)를 생략할 수 있다.
+
+const num = 1
+
+if(num<10)  console.log("Hello");
+else   console.log("BYE");
+대부분의 if...else문은 삼항 조건 연산자로 바꿔 쓸 수 있다. 위의 식을 삼항 연산자로 바꾸게 된다면
+
+const num = 1
+
+const result = num < 10 ? "true" : "false" ;
+console.log(result);  //true
+경우의 수가 true와 false 두 가지가 아닌 세 가지라면 이렇게 표현할 수 있다.
+
+const num = 1
+
+const result = num ? (num < 10? "true":"false"):"null";
+
+console.log(result); //true
+
+삼항조건연산자는 표현식이므로 값처럼 사용할 수 있기에 변수에 저장이 가는하지만 if...else문은 값처럼 사용할 수 없기에 변수에 저장하지 못한다.
+
+단순히 값을 할당한다면 삼항 조건 연산자가 가독성이 좋지만
+조건이 많아지고 여러줄의 문이 필요하다면 if...else를 사용하는 것이 좋다.
+
+Switch는 불리언이 아닌 문자열이나 숫자로 값을 표현한다.
+Switch문을 작성할 때 해당 case문을 실행하고 그 문을 탈출할 수 있게 break를 붙여줘야 한다.
+
+const movie = "iornman";
+const movieName;
+
+Switch(movie){
+	case 'wonderWomen' :
+    	movieName = 'wonderWomen';
+    case ' minari ':
+     	movieName = 'minari';
+    case ' ironman' :
+    	movieName = 'ironman;
+     default :
+     	movieName = 'undefined' ;
+  }
+  
+  console.log(movieName);   //undefined;
+  
+ironman이 출력되지 않고 undefined가 출력되는 걸 볼 수 있다. 
+조건에 맞는 case를 찾고 탈출하여야 하지만 탈출하지 않고 해당 Switch문이 끝날 때까지 이후의 모든 case문과 default값을 실행하기 때문이다.
+이것을 풀스루 라고 한다.
+
+# 반복문의 처리순서
+
+반복문을 실행하기전 딱 한 번 초기화식을 실행한다.그 후에 반복문 루프를 돌리는데 false이면, 
+for문을 빠져나오고 true이면 본문을 실행하고 증감문(반복식)을 실행한다. 조건식이 만족될 때 까지 for문은 반복된다.
+
