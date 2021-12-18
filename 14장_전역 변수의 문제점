@@ -1,0 +1,87 @@
+## 변수의 생명 주기
+변수는 생성되고 언젠가는 Garbage Collection(GC)에 의해서 소멸(메모리 해제)된다. 
+
+13장 스코프에서 본 것 처럼 변수는 자신이 등록된 스코프가 소멸될 때까지 유효하다. 변수는 해당 스코프에 등록이 되어있기 때문에 변수의 생명주기는 함수의 생명주기와 같다.
+
+하지만, 전역 변수는 애플리케이션 생명주기와 같다.
+
+왜 전역 변수를 오남용 하는 것은 많은 문제를 가지고 올까요??
+
+## 전역 변수의 문제점
+전역 변수 오남용의 문제점은 성능 상에도 이슈가 있습니다만 크지 않습니다. (스코프 체인으로 변수 탐색 등)
+
+가장 큰 이유는 **유지보수의 불편함**이 있습니다. 전역 변수 사용 시 변수가 수정되는 블록을 찾기 힘는 이유가 가장 큽니다.
+
+그럼 전역 변수의 사용을 억제하는 방법은 무엇이 있을까요?
+
+## 전역 변수의 사용을 억제하는 방법
+ 
+### 즉시 실행 함수(IIFE)
+즉시 실행 함수는 정의와 동시에 실행되는 함수를 의미 합니다. 
+
+먼저 예제를 보겠습니다.
+```js
+(function () {
+	var foo = 10;
+}());
+
+console.log(foo); // error
+```
+
+함수를 실행했음에도 전역 변수를 오염시키지 않는 모습을 볼 수 있습니다.
+
+IIFE는 Self-Executing Anonymous Function 로 유명한 디자인 패턴입니다. IIFE는 두가지 아래 두가지 중요한 성질를 가지고 있습니다.
+
+1. () 연사자를 통해서 렉시컬 스코프를 가지고 있는 익명 함수를 의미합니다. 이것은 global scope를 오염시키는 것을 방지합니다.
+2. 함수 표현식 ()를 사용하여 자바스크립트 엔진이 정의 후 바로 실행할 수 있게 합니다.
+
+IIFE는 전역 변수를 생성하지 않으므로 라이브러리 등에 자유 사요됩니다.
+
+### 모듈 패턴
+모듈 패턴은 OOP의 클래스를 모방하여 관련이 있는 변수와 함수를 모아 IIFE로 감싸 하나의 모듈을 만드는 것을 의미합니다. 모듈 패턴은 자바스크립트의 강력한 기능인 클로저를 기반으로 동작합니다.
+
+아래 예제를 보겠습니다.
+```js
+var Counter = (function() {
+  // private 변수
+  var num = 0;
+  return {
+  	increase() {
+    	return ++num;
+    },
+    decrease() {
+    	return --num;
+    }
+  }
+}());
+
+console.log(Counter.num); // undefined
+
+console.log(Counter.increase())
+console.log(Counter.decrease())
+console.log(Counter.increase(
+console.log(Counter.decrease())
+```
+
+모듈 패턴은 OOP의 캡슐화를 제공한다고 생각할 수 있다.
+
+### ES6 모듈
+ES6 모듈은 파일 자체의 독자적인 모듈 스코프를 제공한다.
+
+```html
+<script type="module" src='lib.js'></script>
+<script type="module" src='app.js'></script>
+```
+
+```js
+// lib.js
+
+let a = 1;
+```
+```js
+// app.js
+
+console.log(a); // error
+```
+
+위와 같이 js 파일이 정의되어 있다면 lib.js에서 전역 변수의 a가 등록되지만 독자적인 모듈 스코프를 가지고 있어 app.js에서 a를 참조할 수 없습니다.
