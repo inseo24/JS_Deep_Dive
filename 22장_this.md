@@ -219,3 +219,6 @@ function getThisBinding() {
 }
 
 const thisArg = {a:1};
+
+console.log(getThisBinding.bind(thisArg)());// {a:1}
+```
