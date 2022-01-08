@@ -1,10 +1,26 @@
-var x=1;
-function foo(){
-    var x=10;
-    bar();
+
+
+function makeCounter(predicate){
+    let counter =0;
+
+    return function(){
+        counter= predicate(counter)
+        return counter;
+    }
 }
-function bar(){
-    console.log(x);
+
+function increase(n){
+    return ++n;
 }
-foo();
-bar();
+
+function decrease(n){
+    return --n;
+}
+
+const increaser = makeCounter(increase);
+console.log(increaser()); //1
+console.log(increaser()); //2
+
+const decreaser = makeCounter(decrease);
+console.log(decreaser()); //-1
+console.log(decreaser()); //-2
