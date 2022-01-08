@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aebf48ab-c690-49ac-8d84-3058dfe812bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.js" beforeDir="false" afterPath="$PROJECT_DIR$/test1.js" afterDir="false" />
-    </list>
+    <list default="true" id="aebf48ab-c690-49ac-8d84-3058dfe812bb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="main" />
+    <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +32,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test2.html (2)">
+  <component name="RunManager" selected="Node.js.test1.js">
     <configuration name="test1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/JS_Deep_Dive/test1.html?_ij_reload" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -54,11 +50,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.test1.js" />
         <item itemvalue="JavaScript Debug.test2.html (2)" />
         <item itemvalue="JavaScript Debug.test2.html (1)" />
         <item itemvalue="JavaScript Debug.test2.html" />
         <item itemvalue="JavaScript Debug.test1.html" />
-        <item itemvalue="Node.js.test1.js" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +70,7 @@
       <workItem from="1641086841119" duration="3481000" />
       <workItem from="1641294129438" duration="547000" />
       <workItem from="1641294932352" duration="110000" />
-      <workItem from="1641651751187" duration="1538000" />
+      <workItem from="1641651751187" duration="3069000" />
     </task>
     <servers />
   </component>
