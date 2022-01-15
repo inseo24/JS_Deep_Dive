@@ -34,7 +34,7 @@ ex) getElementById, getElementByTagName, \* { ... }, p { ... }, #foo { ... }
 
 앞에 나왔듯이 대부분의 브라우저는 비슷하게 동작한다.
 
-![browser rendering](./image/브라우저렌더링.png)
+![browser rendering](/image/브라우저렌더링.png)
 
 브라우저는 HTML을 받으면 렌더 엔진으로 이걸 파싱하고 DOM 노드로 이뤄진 트리를 만든다. 각 노드는 각 HTML 엘리먼트들과 연관되어 있다.
 
