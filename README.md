@@ -70,8 +70,8 @@ FE 인터뷰에 필요한 지식과 의사소통 능력을 기르자!
 - [x] CH39 DOM
 - [x] CH40 이벤트 
 - [x] CH41 타이머
-- [ ] CH42 비동기 프로그래밍
-- [ ] CH43 Ajax 
-- [ ] CH44 REST API
+- [x] CH42 비동기 프로그래밍
+- [x] CH43 Ajax 
+- [x] CH44 REST API
 - [ ] CH45 프로미스
 - [ ] CH46 제너레이터와 async/await
